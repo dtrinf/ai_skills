@@ -1,0 +1,28 @@
+name: ➖ Remove Team Member Request
+description: Request to remove a user from an existing GitHub Team
+title: "[Remove Member]: "
+labels: ["team-management"]
+body:
+  - type: input
+    id: team_slug
+    attributes:
+      label: GitHub Team Slug
+      description: The slug (short name) of the team to remove the user from (e.g., frontend-devs)
+      placeholder: e.g., frontend-devs
+    validations:
+      required: true
+  - type: input
+    id: username
+    attributes:
+      label: GitHub Username
+      description: The GitHub username of the person to remove from the team
+      placeholder: e.g., octocat
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: Reason for removing
+      description: Briefly explain why this user needs to be removed from this team.
+    validations:
+      required: true

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      /* Remove default body margin that caused 8px overflow */
+      body { margin: 0; }
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background-color: #F0F2F5;
+        background-image: radial-gradient(#1B1F23 0.5px, transparent 0.5px);
+        background-size: 20px 20px;
+        font-family: 'Roboto Mono', monospace;
+        color: #1B1F23;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        border: 10px solid #1B1F23;
+      }
+      .main-box {
+        border: 2px solid #1B1F23;
+        padding-top: 24px; /* reduced inner padding */
+        padding-left: 24px;
+        padding-right: 24px;
+        background: rgba(255, 255, 255, 0.8);
+        width: 1000px;
+        min-height: 360px; /* slightly reduced, content still preserved */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+      .title {
+        font-size: 64px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 10px; /* tightened spacing */
+        text-align: center;
+        border-bottom: 2px solid #D73A49;
+        padding-bottom: 10px;
+      }
+      .subtitle {
+        font-size: 32px;
+        text-transform: uppercase;
+        color: #0366D6;
+        margin-bottom: 20px; /* tightened spacing */
+      }
+      .logo-container {
+        width: 300px;
+        height: 80px; /* reduced to save vertical space */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .logo-container img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+      .label {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 12px;
+        color: #D73A49;
+        font-weight: bold;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="main-box">
+            <div class="label">REF: ACME_DEV_001</div>
+            <h1 class="title">GitHub Group Manager</h1>
+            <h2 class="subtitle">Streamlining Team Collaboration</h2>
+            <div class="logo-container">
+                <img src="/home/ubuntu/upload/search_images/9q8wm7uVGvqZ.png" alt="GitHub Logo">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

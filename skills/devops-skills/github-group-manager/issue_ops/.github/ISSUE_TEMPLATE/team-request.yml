@@ -1,0 +1,19 @@
+name: 🚀 New Team Request
+description: Request a new GitHub Team for your project
+title: "[Team Request]: "
+labels: ["team-management"]
+body:
+  - type: input
+    id: team_name
+    attributes:
+      label: Team Name
+      placeholder: e.g., frontend-alpha
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Team Description
+      placeholder: What is this team for?
+    validations:
+      required: true

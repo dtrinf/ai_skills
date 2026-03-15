@@ -1,0 +1,63 @@
+name: IssueOps Team Membership Manager
+
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  manage-membership:
+    if: github.event.label.name == 'approved' && (contains(github.event.issue.title, '[Add Member]') || contains(github.event.issue.title, '[Remove Member]'))
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Skill Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Parse Issue Body
+        id: parse
+        uses: peter-murray/issue-forms-body-parser@v3
+        with:
+          issue_id: ${{ github.event.issue.number }}
+          separator: '###'
+
+      - name: Determine Command and Execute
+        run: |
+          TEAM_SLUG=$(echo '${{ steps.parse.outputs.payload }}' | jq -r '.team_slug')
+          USERNAME=$(echo '${{ steps.parse.outputs.payload }}' | jq -r '.username')
+          REASON=$(echo '${{ steps.parse.outputs.payload }}' | jq -r '.reason')
+          ISSUE_TITLE="${{ github.event.issue.title }}"
+
+          if [[ "$ISSUE_TITLE" == *"[Add Member]"* ]]; then
+            COMMAND="join"
+            ACTION_MESSAGE="added to"
+          elif [[ "$ISSUE_TITLE" == *"[Remove Member]"* ]]; then
+            COMMAND="remove"
+            ACTION_MESSAGE="removed from"
+          else
+            echo "Unknown issue type. Exiting."
+            exit 1
+          fi
+
+          echo "Executing: python3 scripts/gh_team_manager.py $COMMAND --team \"$TEAM_SLUG\" --username \"$USERNAME\""
+          python3 scripts/gh_team_manager.py $COMMAND --team "$TEAM_SLUG" --username "$USERNAME"
+
+          # Add a comment to the original issue
+          COMMENT_BODY="✅ **Action Completed!**\nUser **${USERNAME}** has been ${ACTION_MESSAGE} team **${TEAM_SLUG}**.\nAn approval/documentation issue has been opened in `example/team-requests` for DevOps review.\n\nReason: ${REASON}"
+          
+          gh issue comment ${{ github.event.issue.number }} --body "$COMMENT_BODY"
+        env:
+          #GH_TOKEN: ${{ secrets.ORG_ADMIN_TOKEN }} | 
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Use GITHUB_TOKEN for commenting on the issue
+
+      - name: Handle Failure
+        if: failure()
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            ❌ **Action Failed!**
+            There was an error processing your request. Please check the workflow logs for details or contact DevOps.

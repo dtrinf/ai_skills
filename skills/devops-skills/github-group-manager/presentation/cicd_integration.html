@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      body { margin: 0; }
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background-color: #F0F2F5;
+        background-image: radial-gradient(#1B1F23 0.5px, transparent 0.5px);
+        background-size: 20px 20px;
+        font-family: 'Roboto Mono', monospace;
+        color: #1B1F23;
+        box-sizing: border-box;
+        border: 10px solid #1B1F23;
+        display: flex;
+        flex-direction: column;
+      }
+      .header {
+        padding-top: 40px;
+        padding-left: 60px;
+      }
+      .title {
+        font-size: 32px;
+        font-weight: 700;
+        text-transform: uppercase;
+        border-left: 8px solid #0366D6;
+        padding-left: 20px;
+        margin-bottom: 40px;
+      }
+      .content-split {
+        display: flex;
+        padding-left: 60px;
+        padding-right: 60px;
+        gap: 40px;
+      }
+      .text-column {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .image-column {
+        width: 500px;
+        border: 2px solid #1B1F23;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+      }
+      .image-column img {
+        width: 460px;
+        height: 340px;
+        object-fit: contain;
+      }
+      .info-box {
+        border: 2px solid #1B1F23;
+        background: rgba(255, 255, 255, 0.9);
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        min-height: 100px;
+        position: relative;
+      }
+      .box-label {
+        font-size: 12px;
+        font-weight: 700;
+        color: #0366D6;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+        display: block;
+      }
+      .box-title {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+      }
+      .box-text {
+        font-size: 14px;
+        line-height: 1.4;
+      }
+      .tech-ref {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        font-size: 10px;
+        opacity: 0.5;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1 class="title">Seamlessly Integrate into Existing Developer Workflows</h1>
+        </div>
+        <div class="content-split">
+            <div class="text-column">
+                <div class="info-box">
+                    <span class="tech-ref">CI_01</span>
+                    <span class="box-label">Automation</span>
+                    <h2 class="box-title">GitHub Actions Ready</h2>
+                    <p class="box-text">Easily triggered by push events or scheduled jobs for automated team management.</p>
+                </div>
+                <div class="info-box">
+                    <span class="tech-ref">CI_02</span>
+                    <span class="box-label">Infrastructure</span>
+                    <h2 class="box-title">Infrastructure as Code</h2>
+                    <p class="box-text">Manage teams alongside your application code for version-controlled access control.</p>
+                </div>
+                <div class="info-box">
+                    <span class="tech-ref">CI_03</span>
+                    <span class="box-label">Onboarding</span>
+                    <h2 class="box-title">Onboarding Automation</h2>
+                    <p class="box-text">Link to HR or onboarding systems to provide day-one access to critical resources.</p>
+                </div>
+            </div>
+            <div class="image-column">
+                <img src="/home/ubuntu/upload/search_images/UlQ4p0AzSK6e.jpg" alt="DevOps Cycle">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

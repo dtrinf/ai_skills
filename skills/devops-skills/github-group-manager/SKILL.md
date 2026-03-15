@@ -19,7 +19,7 @@ The skill first checks for the `GH_TOKEN` environment variable to decide which w
 
 ## Automated Workflow (GH_TOKEN available)
 
-This workflow uses the `gh` CLI to perform actions directly. All team creation and membership changes will create a GitHub Issue in the `example/team-requests` repository to be approved by the DevOps team.
+This workflow uses the `gh` CLI to perform actions directly. All team creation and membership changes will create a GitHub Issue in the `example/team-requests` repository to be approved by the DevOps team. Each approval issue automatically includes a table of all existing teams in the organization for reference and to help prevent duplicate team creation.
 
 ### 1. Create a New Team
 
@@ -37,13 +37,19 @@ gh api \
   -f privacy=\"closed\" 
 ```
 
-**Post-Action**: Create a GitHub issue to request approval.
+**Post-Action**: Create a GitHub issue to request approval, including a list of existing teams.
 
 ```bash
 gh issue create \
   --repo example/team-requests \
   --title "Request to create team: {team_name}" \
-  --body "Please approve the creation of the new team: **{team_name}**. Description: {team_description}."
+  --body "Please approve the creation of the new team: **{team_name}**. Description: {team_description}.
+
+## Existing Teams
+
+| Team Name | Slug | Privacy | Members |
+|-----------|------|---------|---------|
+| ... | ... | ... | ... |"
 ```
 
 ### 2. Request to Join a Team
@@ -59,13 +65,19 @@ gh api \
   /orgs/example/teams/{team_slug}/memberships/{username}
 ```
 
-**Post-Action**: Create a GitHub issue to request approval.
+**Post-Action**: Create a GitHub issue to request approval, including a list of existing teams.
 
 ```bash
 gh issue create \
   --repo example/team-requests \
   --title "Request to add {username} to {team_name}" \
-  --body "Please approve adding **{username}** to the **{team_name}** team."
+  --body "Please approve adding **{username}** to the **{team_name}** team.
+
+## Existing Teams
+
+| Team Name | Slug | Privacy | Members |
+|-----------|------|---------|---------|
+| ... | ... | ... | ... |"
 ```
 
 ### 3. List Existing Teams
@@ -94,13 +106,19 @@ gh api \
   /orgs/example/teams/{team_slug}/memberships/{username}
 ```
 
-**Post-Action**: Create a GitHub issue to document the removal.
+**Post-Action**: Create a GitHub issue to document the removal, including a list of existing teams.
 
 ```bash
 gh issue create \
   --repo example/team-requests \
   --title "Removed {username} from {team_name}" \
-  --body "**{username}** has been removed from the **{team_name}** team."
+  --body "**{username}** has been removed from the **{team_name}** team.
+
+## Existing Teams
+
+| Team Name | Slug | Privacy | Members |
+|-----------|------|---------|---------|
+| ... | ... | ... | ... |"
 ```
 
 ---
@@ -113,7 +131,7 @@ This workflow guides the user to perform the actions manually through the GitHub
 
 1.  **Guide the user**: Instruct the user to navigate to `https://github.com/orgs/example/teams` and click the "New team" button.
 2.  **Collect information**: Ask the user for the **Team name** and **Description**.
-3.  **Approval Request**: Instruct the user to create a new issue in the `example/team-requests` repository with the title `Request to create team: {team_name}` and a description of the request.
+3.  **Approval Request**: Instruct the user to create a new issue in the `example/team-requests` repository with the title `Request to create team: {team_name}` and a description of the request. Include a list of existing teams for reference.
 
 ### 2. Request to Join a Team
 
@@ -130,4 +148,3 @@ This workflow guides the user to perform the actions manually through the GitHub
 1.  **Guide the user**: Instruct the user (who must be a team maintainer) to navigate to the team's "Members" tab at `https://github.com/orgs/example/teams/{team_slug}/members`.
 2.  **Remove member**: Instruct the user to find the member to be removed and select "Remove from team" from the dropdown menu.
 3.  **Documentation**: Instruct the user to create a new issue in the `example/team-requests` repository to document the removal.
-

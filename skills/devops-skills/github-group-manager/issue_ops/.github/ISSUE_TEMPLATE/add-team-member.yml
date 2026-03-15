@@ -1,0 +1,28 @@
+name: ➕ Add Team Member Request
+description: Request to add a user to an existing GitHub Team
+title: "[Add Member]: "
+labels: ["team-management"]
+body:
+  - type: input
+    id: team_slug
+    attributes:
+      label: GitHub Team Slug
+      description: The slug (short name) of the team to add the user to (e.g., frontend-devs)
+      placeholder: e.g., frontend-devs
+    validations:
+      required: true
+  - type: input
+    id: username
+    attributes:
+      label: GitHub Username
+      description: The GitHub username of the person to add to the team
+      placeholder: e.g., octocat
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: Reason for adding
+      description: Briefly explain why this user needs to be added to this team.
+    validations:
+      required: true

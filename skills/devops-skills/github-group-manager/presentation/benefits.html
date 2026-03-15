@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      body { margin: 0; }
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background-color: #F0F2F5;
+        background-image: radial-gradient(#1B1F23 0.5px, transparent 0.5px);
+        background-size: 20px 20px;
+        font-family: 'Roboto Mono', monospace;
+        color: #1B1F23;
+        box-sizing: border-box;
+        border: 10px solid #1B1F23;
+        display: flex;
+        flex-direction: column;
+      }
+      .header {
+        padding-top: 40px;
+        padding-left: 60px;
+      }
+      .title {
+        font-size: 32px;
+        font-weight: 700;
+        text-transform: uppercase;
+        border-left: 8px solid #0366D6;
+        padding-left: 20px;
+        margin-bottom: 40px;
+      }
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 30px;
+        padding-left: 60px;
+        padding-right: 60px;
+      }
+      .benefit-box {
+        border: 2px solid #1B1F23;
+        background: rgba(255, 255, 255, 0.9);
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        min-height: 180px;
+        position: relative;
+      }
+      .benefit-label {
+        font-size: 14px;
+        font-weight: 700;
+        color: #0366D6;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        display: block;
+      }
+      .benefit-title {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+      }
+      .benefit-text {
+        font-size: 16px;
+        line-height: 1.4;
+      }
+      .tech-ref {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-size: 10px;
+        color: #1B1F23;
+        opacity: 0.5;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1 class="title">Driving Productivity and Security for ACME</h1>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit-box">
+                <span class="benefit-label">Benefit 01</span>
+                <h2 class="benefit-title">Faster Onboarding</h2>
+                <p class="benefit-text">Reduce access wait times from days to minutes, ensuring new developers are productive from day one.</p>
+                <span class="tech-ref">VAL_ONBOARDING</span>
+            </div>
+            <div class="benefit-box">
+                <span class="benefit-label">Benefit 02</span>
+                <h2 class="benefit-title">Enhanced Security</h2>
+                <p class="benefit-text">DevOps-approved changes ensure the principle of least privilege is maintained across the organization.</p>
+                <span class="tech-ref">VAL_SECURITY</span>
+            </div>
+            <div class="benefit-box">
+                <span class="benefit-label">Benefit 03</span>
+                <h2 class="benefit-title">Reduced Overhead</h2>
+                <p class="benefit-text">Automate 90% of routine team management tasks, freeing up DevOps for higher-value engineering work.</p>
+                <span class="tech-ref">VAL_EFFICIENCY</span>
+            </div>
+            <div class="benefit-box">
+                <span class="benefit-label">Benefit 04</span>
+                <h2 class="benefit-title">Better Visibility</h2>
+                <p class="benefit-text">A clear, auditable history of all organization-level changes provides total transparency for compliance.</p>
+                <span class="tech-ref">VAL_VISIBILITY</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

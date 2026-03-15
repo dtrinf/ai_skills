@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      body { margin: 0; }
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background-color: #F0F2F5;
+        background-image: radial-gradient(#1B1F23 0.5px, transparent 0.5px);
+        background-size: 20px 20px;
+        font-family: 'Roboto Mono', monospace;
+        color: #1B1F23;
+        box-sizing: border-box;
+        border: 10px solid #1B1F23;
+        display: flex;
+        flex-direction: column;
+      }
+      .header {
+        padding-top: 40px;
+        padding-left: 60px;
+      }
+      .title {
+        font-size: 32px;
+        font-weight: 700;
+        text-transform: uppercase;
+        border-left: 8px solid #0366D6;
+        padding-left: 20px;
+        margin-bottom: 40px;
+      }
+      .diagram-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 40px;
+        padding-left: 60px;
+        padding-right: 60px;
+      }
+      .solution-point {
+        border: 2px solid #1B1F23;
+        background: rgba(255, 255, 255, 0.9);
+        padding-top: 25px;
+        padding-left: 25px;
+        padding-right: 25px;
+        min-height: 160px;
+        position: relative;
+      }
+      .point-label {
+        font-size: 14px;
+        font-weight: 700;
+        color: #0366D6;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        display: block;
+      }
+      .point-title {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+      }
+      .point-text {
+        font-size: 16px;
+        line-height: 1.4;
+      }
+      .tech-id {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 10px;
+        color: #1B1F23;
+        opacity: 0.5;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1 class="title">Automated Workflows Ensure Efficiency and Compliance</h1>
+        </div>
+        <div class="diagram-content">
+            <div class="solution-point">
+                <span class="tech-id">MOD_01</span>
+                <span class="point-label">Integration</span>
+                <h2 class="point-title">Direct API Integration</h2>
+                <p class="point-text">Leverages the GitHub CLI (gh) for direct organization management, bypassing manual UI overhead.</p>
+            </div>
+            <div class="solution-point">
+                <span class="tech-id">MOD_02</span>
+                <span class="point-label">Standards</span>
+                <h2 class="point-title">Standardized Requests</h2>
+                <p class="point-text">All changes follow a predefined, structured process, ensuring consistency across the organization.</p>
+            </div>
+            <div class="solution-point">
+                <span class="tech-id">MOD_03</span>
+                <span class="point-label">Governance</span>
+                <h2 class="point-title">Built-in Approval</h2>
+                <p class="point-text">Integrates a formal approval step into every modification, maintaining total DevOps oversight.</p>
+            </div>
+            <div class="solution-point">
+                <span class="tech-id">MOD_04</span>
+                <span class="point-label">Execution</span>
+                <h2 class="point-title">Real-time Updates</h2>
+                <p class="point-text">Instant execution of approved membership and team changes, reducing wait times to zero.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

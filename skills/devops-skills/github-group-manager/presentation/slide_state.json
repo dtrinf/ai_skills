@@ -1,0 +1,132 @@
+{
+  "project_info": {
+    "title": "GitHub Group Manager Empowers Seamless Team Management",
+    "created": 1773581005.788609,
+    "last_updated": 1773581128.220386,
+    "total_slides": 10
+  },
+  "slides": [
+    {
+      "id": "intro",
+      "state": "edited",
+      "pageNum": 1
+    },
+    {
+      "id": "problem",
+      "state": "edited",
+      "pageNum": 2
+    },
+    {
+      "id": "solution",
+      "state": "edited",
+      "pageNum": 3
+    },
+    {
+      "id": "capabilities",
+      "state": "edited",
+      "pageNum": 4
+    },
+    {
+      "id": "approval_workflow",
+      "state": "edited",
+      "pageNum": 5
+    },
+    {
+      "id": "modes",
+      "state": "edited",
+      "pageNum": 6
+    },
+    {
+      "id": "implementation",
+      "state": "edited",
+      "pageNum": 7
+    },
+    {
+      "id": "cicd_integration",
+      "state": "edited",
+      "pageNum": 8
+    },
+    {
+      "id": "benefits",
+      "state": "edited",
+      "pageNum": 9
+    },
+    {
+      "id": "conclusion",
+      "state": "edited",
+      "pageNum": 10
+    }
+  ],
+  "outline": [
+    {
+      "id": "intro",
+      "title": "GitHub Group Manager Empowers Seamless Team Management",
+      "summary": "Introduction to the GitHub Group Manager skill, highlighting its core purpose and enterprise-ready features.",
+      "image_plan": "/home/ubuntu/upload/search_images/9q8wm7uVGvqZ.png - The slide introduces the GitHub Group Manager, and image 3 clearly displays the GitHub logo and name, making it highly relevant for an introductory slide about a GitHub-related tool.",
+      "slide_template_key": ""
+    },
+    {
+      "id": "problem",
+      "title": "Manual Team Management Is Slow and Error-Prone",
+      "summary": "Discussing the common bottlenecks and issues with manual GitHub team management.",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "solution",
+      "title": "Automated Workflows Ensure Efficiency and Compliance",
+      "summary": "How the skill's automated workflows solve the identified problems while maintaining compliance.",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "capabilities",
+      "title": "Comprehensive Tools for Every Team Management Need",
+      "summary": "A breakdown of the skill's core capabilities, including team creation and membership management.",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "approval_workflow",
+      "title": "DevOps Oversight Is Baked into Every Action",
+      "summary": "Detailing the issue-based approval workflow that ensures DevOps control.",
+      "image_plan": "/home/ubuntu/upload/search_images/bylTggfG5HLr.png - The slide details an approval workflow, specifically mentioning 'Issue-Based Tracking' and 'GitHub Issue'. Image 7 shows a clear visual representation of a workflow or issue tracking system within a GitHub-like interface, making it highly relevant.",
+      "slide_template_key": ""
+    },
+    {
+      "id": "modes",
+      "title": "Adaptability Across Different Environments",
+      "summary": "Comparing the automated and manual modes of the skill and their respective benefits.",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "implementation",
+      "title": "Robust Scripts and Templates Power the Skill",
+      "summary": "A look at the technical implementation, including the Python script and issue templates.",
+      "image_plan": "/home/ubuntu/upload/search_images/ETJVSf7ZYewL.jpg - The slide focuses on 'Technical Implementation' and mentions 'Python-Powered' and 'scripts'. Image 5 depicts people working with code and a development environment, which aligns well with the technical implementation aspect of the slide.",
+      "slide_template_key": ""
+    },
+    {
+      "id": "cicd_integration",
+      "title": "Seamlessly Integrate into Existing Developer Workflows",
+      "summary": "How the skill can be integrated into CI/CD pipelines for automated onboarding and management.",
+      "image_plan": "/home/ubuntu/upload/search_images/UlQ4p0AzSK6e.jpg - The slide discusses 'CI/CD Integration' and mentions 'GitHub Actions Ready' and 'Infrastructure as Code'. Image 6 clearly illustrates a DevOps cycle, which is directly related to CI/CD and the integration of development and operations.",
+      "slide_template_key": ""
+    },
+    {
+      "id": "benefits",
+      "title": "Driving Productivity and Security for ACME",
+      "summary": "Summarizing the key benefits of using the GitHub Group Manager skill for the organization.",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "conclusion",
+      "title": "Transform Your GitHub Organization Management Today",
+      "summary": "Final thoughts and a call to action to start using the GitHub Group Manager skill.",
+      "image_plan": "",
+      "slide_template_key": ""
+    }
+  ]
+}

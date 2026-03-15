@@ -42,6 +42,28 @@ def run_gh(args: list[str]) -> dict | list | None:
     return None
 
 
+def get_existing_teams_markdown() -> str:
+    """Fetch existing teams and format them as a markdown table."""
+    try:
+        teams = run_gh([
+            "api",
+            "--method", "GET",
+            "-H", "Accept: application/vnd.github+json",
+            f"/orgs/{ORG}/teams",
+        ])
+        if not teams:
+            return "No teams currently exist in the organization."
+        
+        # Build markdown table
+        markdown = "| Team Name | Slug | Privacy | Members |\n"
+        markdown += "|-----------|------|---------|---------|\n"
+        for team in teams:
+            markdown += f"| {team['name']} | `{team['slug']}` | {team['privacy']} | {team['members_count']} |\n"
+        return markdown
+    except Exception as e:
+        return f"Error fetching teams: {str(e)}"
+
+
 def create_approval_issue(title: str, body: str) -> None:
     """Create a GitHub issue in the team-requests repo for DevOps approval."""
     run_gh([
@@ -82,9 +104,10 @@ def create_team(name: str, description: str) -> None:
         "-f", "privacy=closed",
     ])
     print(f"Team '{name}' created (slug: {result['slug']}).")
+    existing_teams = get_existing_teams_markdown()
     create_approval_issue(
         title=f"Request to create team: {name}",
-        body=f"Please review and approve the creation of the new team: **{name}**.\n\nDescription: {description}",
+        body=f"Please review and approve the creation of the new team: **{name}**.\n\nDescription: {description}\n\n## Existing Teams\n\n{existing_teams}",
     )
 
 
@@ -97,9 +120,10 @@ def request_membership(team_slug: str, username: str) -> None:
         f"/orgs/{ORG}/teams/{team_slug}/memberships/{username}",
     ])
     print(f"Membership request submitted for '{username}' in team '{team_slug}'.")
+    existing_teams = get_existing_teams_markdown()
     create_approval_issue(
         title=f"Request to add {username} to {team_slug}",
-        body=f"Please approve adding **{username}** to the **{team_slug}** team.",
+        body=f"Please approve adding **{username}** to the **{team_slug}** team.\n\n## Existing Teams\n\n{existing_teams}",
     )
 
 
@@ -112,9 +136,10 @@ def remove_member(team_slug: str, username: str) -> None:
         f"/orgs/{ORG}/teams/{team_slug}/memberships/{username}",
     ])
     print(f"'{username}' has been removed from team '{team_slug}'.")
+    existing_teams = get_existing_teams_markdown()
     create_approval_issue(
         title=f"Removed {username} from {team_slug}",
-        body=f"**{username}** has been removed from the **{team_slug}** team.",
+        body=f"**{username}** has been removed from the **{team_slug}** team.\n\n## Existing Teams\n\n{existing_teams}",
     )
 
 
@@ -154,4 +179,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

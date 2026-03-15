@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      body { margin: 0; }
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background-color: #F0F2F5;
+        background-image: radial-gradient(#1B1F23 0.5px, transparent 0.5px);
+        background-size: 20px 20px;
+        font-family: 'Roboto Mono', monospace;
+        color: #1B1F23;
+        box-sizing: border-box;
+        border: 10px solid #1B1F23;
+        display: flex;
+        flex-direction: column;
+      }
+      .header {
+        padding-top: 40px;
+        padding-left: 60px;
+      }
+      .title {
+        font-size: 32px;
+        font-weight: 700;
+        text-transform: uppercase;
+        border-left: 8px solid #1B1F23;
+        padding-left: 20px;
+        margin-bottom: 40px;
+      }
+      .comparison-container {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 60px;
+        padding-right: 60px;
+        gap: 40px;
+      }
+      .mode-column {
+        flex: 1;
+        border: 2px solid #1B1F23;
+        background: rgba(255, 255, 255, 0.9);
+        padding-top: 30px;
+        padding-left: 30px;
+        padding-right: 30px;
+        min-height: 400px;
+        position: relative;
+      }
+      .mode-header {
+        font-size: 24px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #1B1F23;
+      }
+      .automated-header { color: #0366D6; border-bottom-color: #0366D6; }
+      .manual-header { color: #D73A49; border-bottom-color: #D73A49; }
+      
+      .feature-list {
+        list-style: none;
+      }
+      .feature-item {
+        margin-bottom: 20px;
+        font-size: 16px;
+        line-height: 1.4;
+      }
+      .feature-label {
+        font-weight: 700;
+        display: block;
+        text-transform: uppercase;
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+      .tech-spec {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-size: 10px;
+        opacity: 0.5;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1 class="title">Adaptability Across Different Environments</h1>
+        </div>
+        <div class="comparison-container">
+            <div class="mode-column">
+                <h2 class="mode-header automated-header">Automated Mode</h2>
+                <ul class="feature-list">
+                    <li class="feature-item">
+                        <span class="feature-label">Trigger</span>
+                        Detected GH_TOKEN environment variable.
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-label">Execution</span>
+                        High-speed programmatic API calls via gh CLI.
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-label">User Experience</span>
+                        Hands-free automation for agents and CI/CD.
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-label">Output</span>
+                        Instant creation of structured approval issues.
+                    </li>
+                </ul>
+                <span class="tech-spec">SPEC_AUTO_01</span>
+            </div>
+            <div class="mode-column">
+                <h2 class="mode-header manual-header">Manual Mode</h2>
+                <ul class="feature-list">
+                    <li class="feature-item">
+                        <span class="feature-label">Trigger</span>
+                        No GH_TOKEN or interactive user session.
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-label">Execution</span>
+                        Guided step-by-step instructions for GitHub UI.
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-label">User Experience</span>
+                        Educational walkthrough for human operators.
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-label">Output</span>
+                        Standardized templates for manual issue creation.
+                    </li>
+                </ul>
+                <span class="tech-spec">SPEC_MAN_01</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

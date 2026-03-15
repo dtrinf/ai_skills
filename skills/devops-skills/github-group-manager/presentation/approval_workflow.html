@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      body { margin: 0; }
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background-color: #F0F2F5;
+        background-image: radial-gradient(#1B1F23 0.5px, transparent 0.5px);
+        background-size: 20px 20px;
+        font-family: 'Roboto Mono', monospace;
+        color: #1B1F23;
+        box-sizing: border-box;
+        border: 10px solid #1B1F23;
+        display: flex;
+        flex-direction: column;
+      }
+      .header {
+        padding-top: 40px; /* keep title top padding */
+        padding-left: 60px;
+      }
+      .title {
+        font-size: 32px;
+        font-weight: 700;
+        text-transform: uppercase;
+        border-left: 8px solid #0366D6;
+        padding-left: 20px;
+        margin-bottom: 40px;
+      }
+      .content-wrapper {
+        display: flex;
+        padding-left: 60px;
+        padding-right: 60px;
+        gap: 40px;
+        align-items: flex-start; /* ensure children don't stretch */
+      }
+      .image-box {
+        flex: 1;
+        border: 2px solid #1B1F23;
+        background: #FFFFFF;
+        padding-top: 12px; /* reduced inner padding */
+        padding-left: 12px;
+        padding-right: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 360px; /* reduced from 400 to lower overall height */
+      }
+      .image-box img {
+        width: 500px;
+        height: 350px;
+        object-fit: contain;
+      }
+      /* details converted to a compact 2-column grid to reduce vertical stacking */
+      .details-box {
+        flex: 1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        align-content: start;
+      }
+      .workflow-step {
+        border: 2px solid #1B1F23;
+        background: rgba(255, 255, 255, 0.9);
+        padding-top: 10px; /* reduced */
+        padding-left: 12px;
+        padding-right: 12px;
+        min-height: 100px; /* reduced from 100 but still roomy for text */
+        position: relative;
+        box-sizing: border-box;
+      }
+      .step-label {
+        font-size: 12px;
+        font-weight: 700;
+        color: #0366D6;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+        display: block;
+      }
+      .step-title {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+      }
+      .step-text {
+        font-size: 14px;
+        line-height: 1.4;
+      }
+      .tech-id {
+        position: absolute;
+        top: 6px;
+        right: 10px;
+        font-size: 10px;
+        color: #1B1F23;
+        opacity: 0.5;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1 class="title">DevOps Oversight Is Baked into Every Action</h1>
+        </div>
+        <div class="content-wrapper">
+            <div class="image-box">
+                <img src="/home/ubuntu/upload/search_images/bylTggfG5HLr.png" alt="GitHub Workflow Visualization">
+            </div>
+            <div class="details-box">
+                <div class="workflow-step">
+                    <span class="tech-id">WF_01</span>
+                    <span class="step-label">Tracking</span>
+                    <h2 class="step-title">Issue-Based Tracking</h2>
+                    <p class="step-text">Every write action creates a GitHub Issue in the team-requests repo for transparent tracking.</p>
+                </div>
+                <div class="workflow-step">
+                    <span class="tech-id">WF_02</span>
+                    <span class="step-label">Context</span>
+                    <h2 class="step-title">Structured Templates</h2>
+                    <p class="step-text">Predefined templates provide DevOps with all necessary context for quick decision-making.</p>
+                </div>
+                <div class="workflow-step">
+                    <span class="tech-id">WF_03</span>
+                    <span class="step-label">Compliance</span>
+                    <h2 class="step-title">Audit Compliance</h2>
+                    <p class="step-text">Maintains a permanent record of who requested what and when for security reviews.</p>
+                </div>
+                <div class="workflow-step">
+                    <span class="tech-id">WF_04</span>
+                    <span class="step-label">Control</span>
+                    <h2 class="step-title">Manual Gatekeeping</h2>
+                    <p class="step-text">DevOps retains final say over all organization-level changes through issue closure.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
